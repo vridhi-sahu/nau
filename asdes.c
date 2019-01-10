@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+	int n , arr[100], i=0, j=0,t=0,m=0;
+	scanf("%d",&n);
+	if(n%2==0){
+		m=(n/2);
+	}
+	else
+		m=(n/2)+1;
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n-i-1;j++)
+		{
+			if(arr[j]>arr[j+1])
+			{
+				t=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=t;
+			}
+		}
+	}
+		for(i=0;i<m;i++)
+	{
+		printf("%d\t",arr[i]);
+	}
+	printf("\n\n");
+	for(i=n-1;i>=m;i--)
+	{
+		printf("%d\t",arr[i]);
+	}
+}
